@@ -66,6 +66,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 110px;
+    overflow-x: clip;
     scrollbar-color: #334155 #080c14;
     scrollbar-width: thin;
 }
@@ -178,7 +179,7 @@ body {
 }
 
 .ambient {
-    position: absolute;
+    position: fixed;
     z-index: -1;
     width: 500px;
     height: 500px;
@@ -1914,16 +1915,29 @@ body {
 
     .hero-copy {
         max-width: 620px;
+        margin-inline: auto;
+        text-align: center;
     }
 
     .hero h1 {
+        margin-inline: auto;
         font-size: clamp(42px, 8vw, 62px);
         letter-spacing: -2.8px;
     }
 
+    .hero .eyebrow {
+        justify-content: center;
+    }
+
     .hero-lede {
         max-width: 540px;
+        margin-inline: auto;
         font-size: 14px;
+    }
+
+    .hero-actions,
+    .hero-meta {
+        justify-content: center;
     }
 
     .hero-art {
@@ -1941,14 +1955,18 @@ body {
     }
 
     .scroll-cue {
+        left: 50%;
         bottom: 35px;
+        white-space: nowrap;
+        transform: translateX(-50%);
     }
 
     .section-heading {
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column;
         gap: 10px;
         margin-bottom: 32px;
+        text-align: center;
     }
 
     .section-heading h2,
@@ -1963,10 +1981,16 @@ body {
     .about-content {
         grid-template-columns: 1fr;
         gap: 30px;
+        text-align: center;
     }
 
     .about-text {
         max-width: 600px;
+        margin-inline: auto;
+    }
+
+    .section-kicker {
+        justify-content: center;
     }
 
     .principles {
@@ -1978,6 +2002,7 @@ body {
     .principles > div {
         min-height: 180px;
         padding: 17px 13px;
+        text-align: center;
     }
 
     .principles h3 {
@@ -2004,6 +2029,16 @@ body {
 
     .project-info {
         padding: 24px;
+        text-align: center;
+    }
+
+    .project-tags,
+    .project-footer {
+        justify-content: center;
+    }
+
+    .project-contributions {
+        text-align: left;
     }
 
     .project-info h3 {
@@ -2017,6 +2052,12 @@ body {
 
     .experience-card {
         padding: 25px;
+        text-align: center;
+    }
+
+    .experience-top,
+    .experience-tags {
+        justify-content: center;
     }
 
     .skills-section {
@@ -2031,22 +2072,35 @@ body {
 
     .skill-card {
         padding: 21px 18px;
+        text-align: center;
     }
 
     .skill-card-header {
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column;
+        justify-content: center;
         gap: 12px;
+    }
+
+    .skill-tags {
+        justify-content: center;
+    }
+
+    .section-description {
+        margin-inline: auto;
+        text-align: center;
     }
 
     .site-footer {
         flex-wrap: wrap;
+        justify-content: center;
         gap: 20px;
         padding-block: 28px;
+        text-align: center;
     }
 
     .site-footer > span:nth-of-type(1) {
-        flex: 1;
+        flex: 0 1 auto;
     }
 
     .site-footer > span:nth-of-type(2) {
@@ -2101,7 +2155,7 @@ body {
     }
 
     .hero h1 {
-        font-size: clamp(38px, 10vw, 48px);
+        font-size: clamp(34px, 10vw, 44px);
         letter-spacing: -2.4px;
         line-height: 1.18;
     }
@@ -2151,6 +2205,11 @@ body {
     .section-kicker {
         font-size: 9px;
         letter-spacing: 1.4px;
+    }
+
+    .heading-note {
+        justify-content: center;
+        text-align: center;
     }
 
     .section-heading h2,
