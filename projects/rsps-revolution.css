@@ -1,0 +1,74 @@
+/* Features grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+/* Individual feature cards */
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: #111827;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 220, 255, 0.45);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+/* Feature title — first */
+.feature-card h3 {
+    order: 1;
+    margin: 0 0 18px;
+    color: #f3f4f6;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* Image, GIF, or video — second */
+.feature-media {
+    order: 2;
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    margin: 0 auto 18px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Description — last */
+.feature-card p {
+    order: 3;
+    margin: 0;
+    color: #aab4c5;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .feature-card {
+        padding: 18px;
+    }
+
+    .feature-media {
+        height: 200px;
+    }
+}
